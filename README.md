@@ -25,9 +25,14 @@ Cluster Monitor Agent is an internal tool that monitors the cluster resources su
 ## Usage
 
 * Use `init.sql` init database and tables. Run only once.
+
 * `host_info.sh` run only once to insert the the hostinfo into the host_info table.
+
 * `host_usage` be triggered by the `crontab` job every minute and insert data into host_usage table.
+
 * `crontab` setup with every minute to run host_usage and save result into host_usage.log
+
+  ```
 
 ## Improvements
 

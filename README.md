@@ -1,12 +1,12 @@
 ## Introduction
 
-Cluster Monitor Agent is an internal tool that monitors the cluster resources such as CPU, memory and disk available of a Linux cluster. It helps the infrastructure team to record and analyze the CPU/Memory 
+Cluster Monitor Agent is an internal tool that monitors the cluster resources such as CPU, memory and disk available of a Linux cluster. It helps the infrastructure team to record and analyze the CPU/Memory.
 
 ## Architecture and Design
 
 * The cluster diagram with three linux hosts, a DB and agents
 
- ![project](/Users/stevenma/Desktop/Jarvis/linux-usage-agent/project.png)
+ ![project](https://github.com/steve-ma-jrvs/linux-usage-agent/blob/master/project.png)
 
 * Create a database named host_agent in Postgres and save data into two tables:
 
@@ -34,4 +34,3 @@ Cluster Monitor Agent is an internal tool that monitors the cluster resources su
 1. Handle hardware updates
 2. Record the unusual CPU/Memory usage data
 3. Create a backup database on other server as well
-

@@ -4,9 +4,9 @@ CREATE DATABASE host_agent;
 
 \c host_agent;
 
-DROP TABLE IF EXISTS PUBLIC.host_info;
+DROP TABLE IF EXISTS host_info;
 
-CREATE TABLE PUBLIC.host_info
+CREATE TABLE host_info
 (
 	id			SERIAL NOT NULL,
 	hostname		VARCHAR NOT NULL,
@@ -21,9 +21,9 @@ CREATE TABLE PUBLIC.host_info
 	CONSTRAINT host_info_un UNIQUE (hostname)
 );
 
-DROP TABLE IF EXISTS PUBLIC.host_usage;
+DROP TABLE IF EXISTS host_usage;
 
-CREATE TABLE PUBLIC.host_usage
+CREATE TABLE host_usage
 (
         "timestamp"             TIMESTAMP NOT NULL,
 	host_id			SERIAL NOT NULL,

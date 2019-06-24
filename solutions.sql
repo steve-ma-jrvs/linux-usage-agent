@@ -17,7 +17,9 @@ RETURNS TIMESTAMP WITHOUT TIME ZONE AS $$
       )
 $$ LANGUAGE SQL IMMUTABLE;
 
-SELECT id as host_id, hostname, total_mem, ROUND(((total_mem - (avg(memory_free) over w) * 1000 ) / total_mem)*100, 5) as used_memory_percentage
-FROM host_info
+SELECT id as host_id, hostname, total_mem, ROUND(((total_mem - avg(memory_free)* 1000 ) / total_mem)*100, 2) as used_memory_percentage
+FROM 
+(SELECT round_minutes("timestamp", 5) FROM host_usage) AS round_times,
+host_info 
 INNER JOIN host_usage on host_info.id = host_usage.host_id
-window w as (partition by round_minutes(host_usage."timestamp", 5));
+GROUP BY id, hostname, total_mem, round_times;

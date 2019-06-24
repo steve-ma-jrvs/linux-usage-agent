@@ -32,7 +32,9 @@ Cluster Monitor Agent is an internal tool that monitors the cluster resources su
 
 * `crontab` setup with every minute to run host_usage and save result into host_usage.log
 
-  ```
+```bash
+* * * * * bash /home/centos/dev/jrvs/bootcamp/host_agent/scripts/host_usage.sh localhost 5432 host_agent postgres password  > /tmp/host_usage.log
+```
 
 ## Improvements
 
